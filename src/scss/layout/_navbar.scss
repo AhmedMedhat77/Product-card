@@ -1,0 +1,115 @@
+.navbar {
+  @extend .flex-between;
+  padding: $--paddding-s $--paddding-m;
+  position: relative;
+  box-shadow: 1px 2px 3px #ddd;
+  background-color: $--white;
+  z-index: 30;
+  &__mobile-menu {
+    @include media-prop(display, none, flex, flex);
+    cursor: pointer;
+    position: absolute;
+    left: $--margin-m;
+    z-index: 110;
+    &.active {
+      top: 2rem;
+    }
+  }
+  &__logo {
+    margin-left: $--margin-xl;
+  }
+  &__menu {
+    display: flex;
+    @include media-prop(flex-direction, row, column, column);
+    align-items: start;
+    padding-left: $--paddding-m;
+    @include media-prop(position, relative, absolute, absolute);
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background-color: $--white;
+    @include media-prop(height, "nill", 100vh, 100vh);
+    @include media-prop(width, "nill", 70vw, 66vw);
+    @include media-prop(box-shadow, "nill", 1px 2px 3px #ddd, 1px 2px 3px #ddd);
+    @include media-prop(padding-top, "nill", 6rem, 6rem);
+    transition: $--transition;
+    &.active {
+      @include media-prop(left, "nill", -100rem, -100rem);
+    }
+    &__item {
+      position: relative;
+      @extend .typo--l;
+      @include media-prop(
+        margin,
+        0 $--paddding-m,
+        $--paddding-m 0,
+        $--paddding-m 0
+      );
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -25px;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 0.5rem;
+        opacity: 0;
+        background-color: $--color-primary;
+      }
+      &:hover::before {
+        height: 0.5rem;
+        opacity: 1;
+        transition: $--transition;
+      }
+      & a {
+        color: $--garysh-blue;
+        @include media-prop(font-weight, 400, 600, 600);
+        &:hover {
+          color: $--black;
+        }
+      }
+    }
+  }
+  &__actions {
+    @extend .flex-center;
+
+    &__item {
+      margin-left: $--margin-m;
+      position: relative;
+      & img {
+        max-width: 4.5rem;
+        cursor: pointer;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.cart {
+  position: absolute;
+  width: 2.5rem;
+  height: 1.8rem;
+  background-color: $--color-primary;
+  color: $--white;
+  border-radius: 0.5rem;
+  top: -1.4rem;
+  left: 1.1rem;
+  @extend .flex-center;
+}
+
+.avatar {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: $--transition;
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $--color-primary;
+  }
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  box-shadow: 0 0 0 2000px inset rgba(0, 0, 0, 75%);
+  z-index: 2;
+}

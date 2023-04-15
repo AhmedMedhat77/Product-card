@@ -1,0 +1,21 @@
+//google font
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;600;700&display=swap");
+//abstracts Mixins
+@import "./abstracts/mixin";
+@import "./abstracts/variables";
+// base and roots
+@import "./base/reset";
+@import "./base/typography";
+
+// components
+@import "./components/productInfo";
+@import "./components/slider";
+@import "./components/cart";
+@import "./components/cart-item";
+
+//layouts
+@import "./layout/navbar";
+@import "./layout/btns";
+
+//pages
+@import "./page/productPage";

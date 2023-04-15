@@ -1,0 +1,30 @@
+.footer {
+  padding: $--paddding-m;
+  border-top: 1px solid $--color-dark-white;
+  @extend .responsive-title;
+  @include media-prop("flex-direction", row, column);
+  color: $--color-dark-white;
+  & a {
+    color: $--color-darker-white;
+    transition: $--transition;
+
+    &:hover {
+      color: $--color-white;
+    }
+  }
+  @extend .flex-between;
+  &__left {
+    display: flex;
+    align-items: center;
+    &__item {
+      margin-left: $--margin-s;
+      @extend .responsive-medum-text;
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .footer {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,29 @@
+.cart-list {
+  position: absolute;
+  @include media-prop(right, 4%, 0, 0);
+  @include media-prop(top, 7.6rem, 6.9rem, 6.9rem);
+  @include media-prop(width, 45rem, 100vw, 100vw);
+  min-height: 20vh;
+  border-bottom-right-radius: $--paddding-s;
+  border-bottom-left-radius: $--paddding-s;
+  z-index: 20;
+  background-color: $--white;
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 20%);
+  &__header {
+    padding: $--paddding-s $--paddding-m $--paddding-m;
+    @include media-prop(font-size, 2rem, 1.8rem, 1.8rem);
+    border-bottom: 1px solid $--garysh-blue;
+    color: $--dark-garysh-blue;
+  }
+  &__body {
+    min-height: 20vh;
+
+    font-weight: bold;
+    @include media-prop(font-size, 1.7rem, 1.7rem, 1.7rem);
+  }
+}
+
+.empty-cart {
+  @extend .flex-center;
+  height: 20rem;
+}

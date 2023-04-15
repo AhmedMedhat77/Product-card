@@ -1,0 +1,56 @@
+.btn {
+  outline: transparent;
+  border: 2px solid transparent;
+
+  transition: $--transition;
+
+  cursor: pointer;
+  &--primary {
+    background-color: $--color-primary;
+    color: $--white;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &--primary2 {
+    background-color: $--white;
+    color: $--color-primary;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &--secondary {
+    background-color: transparent;
+    color: $--color-darker-white;
+    border-color: $--color-darker-white;
+    &:hover {
+      background-color: $--color-darker-white;
+      color: $--body-color;
+    }
+  }
+  &--lg {
+    @include media-prop(
+      "padding",
+      $--paddding-m $--paddding-l,
+      $--paddding-m $--paddding-m,
+      $--paddding-s $--paddding-m
+    );
+    @extend .responsive-small-text;
+  }
+  &--m {
+    @include media-prop(
+      "padding",
+      $--paddding-s $--paddding-m,
+      $--paddding-s $--paddding-m,
+      $--paddding-xs2 $--paddding-xs1
+    );
+    @extend .responsive-xsmall-text;
+  }
+
+  &--rounded-m {
+    border-radius: $--paddding-m;
+  }
+  &--rounded-s {
+    border-radius: $--paddding-s;
+  }
+}

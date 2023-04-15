@@ -1,0 +1,6 @@
+.product-page {
+  padding-top: $--paddding-xl;
+  display: grid;
+  @include media-prop(grid-template-columns, repeat(2, 1fr), 1fr, 1fr);
+  gap: 2rem;
+}

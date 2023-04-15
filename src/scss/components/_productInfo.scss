@@ -1,0 +1,138 @@
+.product {
+  @include media-prop(margin-top, 4rem, "nill", "nill");
+  &__content {
+    @include media-prop(
+      padding,
+      0 $--paddding-l 0 0,
+      0 $--paddding-m,
+      0 $--paddding-m
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    &__title {
+      color: $--color-primary;
+      margin-bottom: $--margin-s;
+      text-transform: uppercase;
+      @include media-prop(font-size, 2rem, 1.4rem, 1.4rem);
+      font-weight: 600;
+    }
+    &__header {
+      @include media-prop(font-size, 6.8rem, 4rem, 4rem);
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: $--black;
+      margin-bottom: $--margin-s;
+      text-transform: capitalize;
+    }
+    &__description {
+      color: $--dark-garysh-blue;
+      @include media-prop(font-size, 2rem, 1.9rem, 1.9rem);
+      @include media-prop(line-height, 1.6, "nill", "nill");
+      margin-bottom: $--margin-m;
+
+      letter-spacing: 1.1px;
+    }
+    &__price {
+      &__current {
+        display: flex;
+        align-items: center;
+        color: $--black;
+        margin-bottom: $--paddding-s;
+        font-weight: 600;
+        @include media-prop(font-size, 2.6rem, 2.1rem, 2.1rem);
+        &__discount {
+          margin-left: $--margin-s;
+          padding: $--paddding-xs1 $--paddding-xs2;
+          color: $--color-primary;
+          background-color: $--color-secondary;
+          font-weight: 600;
+          @include media-prop(font-size, 2.6rem, 1.8rem, 1.8rem);
+        }
+      }
+      &__old {
+        color: $--dark-garysh-blue;
+        text-decoration: line-through;
+        @include media-prop(font-size, 2rem, 1.9rem, 2.1rem);
+      }
+    }
+    &__actions {
+      display: flex;
+      align-items: center;
+      @include media-prop(flex-direction, row, column, column);
+      @include media-prop(justify-content, "nill", center, center);
+      @include media-prop(padding, 0, 0 6rem 6rem, 0 6rem 6rem);
+
+      &__left {
+        display: flex;
+        align-items: center;
+        @include media-prop(width, "nill", 100%, 100%);
+        @include media-prop(
+          justify-content,
+          center,
+          space-between,
+          space-between
+        );
+        @include media-prop(margin-bottom, "nill", $--margin-m, $--margin-m);
+        &__counter {
+          color: $--black;
+          @include media-prop(font-size, 3rem, 2rem, 2rem);
+          padding: $--paddding-m;
+        }
+        &__button {
+          background-color: $--white;
+          color: $--color-primary;
+          transition: $--transition;
+          border: 1px solid transparent;
+          @include media-prop(font-size, 3rem, 2rem, 2rem);
+          @include media-prop(padding, 1rem 2.5rem, 1rem 1.7rem, 1rem 1.7rem);
+
+          &:active,
+          &:focus {
+            animation: flash 1s;
+          }
+        }
+      }
+      &__right {
+        @include media-prop(margin-left, 3rem, 0, 0);
+        width: 100%;
+
+        &__button {
+          @include media-prop(width, "nill", 100%, 100%);
+          @include media-prop(padding, 1rem 3rem, 1rem 2rem, 1rem 2rem);
+          border-radius: $--paddding-m;
+          background-color: $--color-primary;
+          color: $--white;
+          @include media-prop(font-size, 2rem, 1.5rem, 1.5rem);
+          @extend .flex-center;
+          &:hover {
+            opacity: 0.5;
+          }
+          white-space: nowrap;
+          & img {
+            margin-right: $--margin-s;
+            max-width: 5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.5%;
+    background: $--dark-garysh-blue;
+    border-color: $--color-primary;
+  }
+  50% {
+    opacity: 1;
+    background: $--white;
+  }
+  0% {
+    opacity: 0.5%;
+    background: $--dark-garysh-blue;
+    border-color: $--color-primary;
+  }
+}

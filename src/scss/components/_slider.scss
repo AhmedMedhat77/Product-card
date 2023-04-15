@@ -1,0 +1,66 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  &__main {
+    @include media-prop(width, 50%, 100%, 100%);
+    @include media-prop(height, 100%, 50vh, 50vh);
+    position: relative;
+    cursor: pointer;
+    margin: auto;
+    & img {
+      @include media-prop(border-radius, 2rem, "nill", "nill");
+      object-fit: contain;
+    }
+    &__actions {
+      @include media-prop(display, none, flex, flex);
+      &__left,
+      &__right {
+        position: absolute;
+        top: 50%;
+        width: 5.5rem;
+        height: 5.5rem;
+        transform: translateY(-50%);
+        cursor: pointer;
+        @extend .flex-center;
+        & img {
+          max-width: 100%;
+          padding: 2rem;
+          border-radius: 50%;
+          background-color: $--white;
+        }
+      }
+      &__left {
+        right: 1%;
+      }
+      &__right {
+        left: 1%;
+      }
+    }
+  }
+  &__actions {
+    height: 30vh;
+    @extend .flex-center;
+    @include media-prop(display, flex, none, none);
+    &__item {
+      margin-left: $--margin-m;
+      cursor: pointer;
+      max-height: 10rem;
+      max-width: 12rem;
+      & img {
+        border: 4px solid transparent;
+        border-radius: $--paddding-m;
+        object-fit: contain;
+        transition: $--transition;
+        &:hover,
+        &:active,
+        &:focus {
+          border: 4px solid $--color-primary;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

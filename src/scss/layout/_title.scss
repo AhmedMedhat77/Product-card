@@ -1,0 +1,22 @@
+.main-title {
+  text-align: start;
+  position: relative;
+  border-bottom: 1px solid $--color-gray;
+  max-width: fit-content;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 0.2rem;
+    background-color: $--color-primary;
+  }
+
+  & h2 {
+    @extend .responsive-title;
+    color: $--color-white;
+    margin-bottom: $--margin-s;
+    font-weight: 400;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+}
